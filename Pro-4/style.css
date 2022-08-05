@@ -3,7 +3,7 @@
 }
 
 body {
-    color: black;
+    background-color: rgb(17, 18, 24);
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
@@ -12,4 +12,76 @@ body {
     height: 90vh;
     overflow: hidden;
     margin: 0;
+}
+
+.magic {
+    background-color: rgb(64, 64, 243);
+    color: white;
+    font-family: sans-serif;
+    border: 0;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 12px 20px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 3px rgb(166, 166, 248);
+    z-index: 100;
+}
+
+.magic:active {
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.boxes.big {
+    width: 600px;
+    height: 600px;
+}
+
+.boxes.big .box {
+    transform: rotateZ(360deg);
+}
+
+.box {
+    background-image: url(https://c.tenor.com/aF-wyBDoI84AAAAd/one-piece.gif) ;
+    height: 125px;
+    width: 125px;
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+.box::after {
+    content: '';
+    background-color: rgb(29, 29, 245);
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+
+.box::before {
+    content: '';
+    background-color: rgb(224, 93, 93);
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
 }
